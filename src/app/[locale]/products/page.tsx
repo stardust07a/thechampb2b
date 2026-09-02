@@ -9,7 +9,7 @@ import { ProductGrid } from "@/components/product/product-grid";
 import { ProductCard } from "@/components/product/product-card";
 import { LoadMore } from "@/components/product/load-more";
 import { EmptyResults } from "@/components/product/empty-results";
-import { getFilterFacets, listProducts, type ProductFilters } from "@/lib/products";
+import { getFilterFacets, listProducts, PER_PAGE, type ProductFilters } from "@/lib/products";
 import { getSettings } from "@/lib/settings";
 
 export async function generateMetadata({
@@ -68,7 +68,7 @@ export default async function CatalogPage({
   const settings = await getSettings();
 
   // "Load more" tıklandığında page artar ve o sayfaya kadar olan her şey gelir
-  const perPage = 48;
+  const perPage = PER_PAGE;
   const pages = filters.page ?? 1;
 
   const [result, facets] = await Promise.all([

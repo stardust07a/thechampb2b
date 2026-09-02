@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import { z } from "zod";
 
 import { prisma } from "@/lib/prisma";
-import { checkLoginRateLimit } from "@/lib/rate-limit-login";
+import { checkLoginRateLimit } from "@/lib/rate-limit";
 
 /**
  * Auth.js — sadece admin, tek rol (brief §9).
@@ -28,7 +28,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         if (!parsed.success) return null;
 
         const { email, password } = parsed.data;
-        if (!checkLoginRateLimit(email)) return null;
+        const limit = await checkLoginRateLimit(email);
+        if (!limit.ok) return null;
 
         const user = await prisma.adminUser.findUnique({ where: { email } });
         // kullanıcı yoksa da bcrypt çalıştır: zamanlama farkı sızdırmasın

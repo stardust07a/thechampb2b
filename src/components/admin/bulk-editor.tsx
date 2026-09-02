@@ -26,15 +26,22 @@ export type BulkRow = {
   leadTimeDays: string;
 };
 
-const EDITABLE = ["price100", "price300", "price500", "price1000", "gsm", "moq", "leadTimeDays"] as const;
-type EditableField = (typeof EDITABLE)[number];
+/** Tabloda hücre hücre düzenlenebilen alanlar. */
+type EditableField =
+  | "price100"
+  | "price300"
+  | "price500"
+  | "price1000"
+  | "gsm"
+  | "moq"
+  | "leadTimeDays";
 
 const HEADERS: { key: EditableField; label: string }[] = [
   { key: "price100", label: "100+" },
   { key: "price300", label: "300+" },
   { key: "price500", label: "500+" },
   { key: "price1000", label: "1000+" },
-  { key: "gsm", label: "Gramaj" },
+  { key: "gsm", label: "Gramaj (g/m²)" },
   { key: "moq", label: "MOQ" },
   { key: "leadTimeDays", label: "Termin" },
 ];

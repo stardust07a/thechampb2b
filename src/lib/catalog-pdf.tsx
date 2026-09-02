@@ -370,6 +370,8 @@ function CatalogDocument({ locale, categories, settings }: PdfInput) {
               return (
                 <View key={product.productCode} style={s.card} wrap={false}>
                   {image ? (
+                    // @react-pdf/renderer Image bileşeni; alt niteliği yok.
+                    // eslint-disable-next-line jsx-a11y/alt-text
                     <Image src={image} style={s.cardImage} />
                   ) : (
                     <View style={s.cardImage} />

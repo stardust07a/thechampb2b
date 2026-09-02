@@ -12,7 +12,6 @@ import { useScrolled } from "@/lib/browser-state";
 import { CurrencySwitcher } from "./currency-switcher";
 import { InquiryButton } from "./inquiry-button";
 import { LocaleSwitcher } from "./locale-switcher";
-import { ThemeToggle } from "./theme-toggle";
 import { Wordmark } from "./wordmark";
 
 /**
@@ -43,8 +42,12 @@ export function Header({ whatsappHref }: { whatsappHref: string }) {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <Container className="flex h-16 items-center gap-4 md:h-18">
-        <Link href="/" className="shrink-0" aria-label="THE CHAMP GLOBAL">
+      <Container className="flex h-16 items-center gap-2 md:h-18 md:gap-4">
+        <Link
+          href="/"
+          className="inline-flex min-h-11 shrink-0 items-center"
+          aria-label="THE CHAMP GLOBAL"
+        >
           <Wordmark className="h-5 w-auto md:h-6" />
         </Link>
 
@@ -70,7 +73,6 @@ export function Header({ whatsappHref }: { whatsappHref: string }) {
         <div className="ms-auto flex items-center gap-1 md:gap-2">
           <CurrencySwitcher className="hidden sm:inline-flex" />
           <LocaleSwitcher />
-          <ThemeToggle />
           <InquiryButton />
           <a
             href={whatsappHref}

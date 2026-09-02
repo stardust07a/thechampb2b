@@ -12,6 +12,13 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Üretilen ve üçüncü taraf dosyalar bizim kural setimize tabi değil:
+    // Prisma client üretiliyor, .claude/skills dış depolardan kopyalandı,
+    // .devdb yerel PostgreSQL veri dizini.
+    "src/generated/**",
+    ".claude/**",
+    ".devdb/**",
+    "public/**",
   ]),
 ]);
 

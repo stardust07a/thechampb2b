@@ -13,7 +13,6 @@ import { getSettings } from "@/lib/settings";
 import { resolvePrices, TIERS } from "@/lib/price";
 import { mediaUrl } from "@/lib/media";
 import { SECTION_LABELS, label } from "@/lib/taxonomy";
-import { prisma } from "@/lib/prisma";
 
 export const revalidate = 3600;
 
@@ -121,7 +120,7 @@ export default async function ProductPage({
 
   const specRows = [
     { label: t("fabric"), value: spec.fabric?.[locale] ?? null },
-    { label: t("gsm"), value: spec.gsm ? `${spec.gsm} gsm` : null },
+    { label: t("gsm"), value: spec.gsm ? `${spec.gsm} g/m²` : null },
     { label: t("sizeRange"), value: sizeRange },
     { label: t("colours"), value: t("colourCount", { count: product.variants.length }) },
     { label: t("moq"), value: `${spec.moq}` },
@@ -194,7 +193,6 @@ export default async function ProductPage({
           ve sosyal/ARAMA crawler'ları veriyi hiç görmez. */}
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 

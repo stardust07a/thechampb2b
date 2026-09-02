@@ -26,10 +26,10 @@ const button = cva(
           "rounded-[--radius-pill] border border-transparent bg-danger/12 text-danger hover:bg-danger/20",
       },
       size: {
-        sm: "h-9 px-4 text-sm",
+        sm: "h-11 px-4 text-sm md:h-9",
         md: "h-11 px-7 text-[15px]",
         lg: "h-13 px-8 text-base",
-        icon: "size-10 rounded-[--radius-inner] px-0",
+        icon: "size-11 rounded-[--radius-inner] px-0 md:size-10",
       },
     },
     defaultVariants: { variant: "primary", size: "md" },

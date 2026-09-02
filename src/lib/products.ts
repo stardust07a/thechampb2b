@@ -3,7 +3,7 @@ import { cache } from "react";
 
 import { prisma } from "./prisma";
 import type { Locale } from "@/i18n/routing";
-import { COLOR_LABELS, SECTION_LABELS, SUBCATEGORY_LABELS, colorLabel, label } from "./taxonomy";
+import { SECTION_LABELS, SUBCATEGORY_LABELS, colorLabel, label } from "./taxonomy";
 
 /**
  * Public ürün sorguları.
@@ -173,7 +173,8 @@ export type ProductFilters = {
   perPage?: number;
 };
 
-export const PER_PAGE = 48;
+// Masaüstündeki 5 sütunlu katalogda ilk ekran 7 tam sıra gösterir.
+export const PER_PAGE = 35;
 
 /**
  * "Load more" sunucudan biriktirerek çalışır: sayfa numarası URL'e yazılır ve

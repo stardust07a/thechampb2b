@@ -61,6 +61,13 @@
   );
   /* Fotoğrafın tamamına inen ince taban tonu — parlak kareler patlamasın */
   --hero-tint: rgb(10 10 11 / 0.34);
+  /* Kategori kartında fotoğrafı boğmadan yalnızca başlık zeminini koyulaştırır. */
+  --category-card-scrim: linear-gradient(
+    180deg,
+    transparent 48%,
+    rgb(5 5 6 / 0.12) 64%,
+    rgb(5 5 6 / 0.78) 100%
+  );
   /* Scroll-video hero, tema açık olsa bile sinematik koyu yüzeyde kalır. */
   --cinema-bg: #050506;
   --cinema-text: #f7f7f8;
@@ -177,6 +184,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  color-scheme: dark;
 }
 
 body {
@@ -204,6 +212,21 @@ h4 {
 
 p {
   text-wrap: pretty;
+}
+
+:where(a, button, summary) {
+  touch-action: manipulation;
+}
+
+.category-card-scrim {
+  background: var(--category-card-scrim);
+}
+
+/* 320–359px telefonlarda menü kontrollerine yer aç; ana marka adı korunur. */
+@media (max-width: 359px) {
+  .wordmark-global {
+    display: none;
+  }
 }
 
 /* Ürün kodu ve teknik veri — brief §3.2 */
@@ -289,7 +312,7 @@ p {
 }
 
 /* Erişilebilir odak halkası — outline:none yerine görünür halka (brief §3.3) */
-:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
   outline: none;
   box-shadow:
     0 0 0 2px var(--bg),
@@ -349,8 +372,24 @@ p {
 
   .editorial-hero-scrim {
     background:
-      linear-gradient(90deg, rgb(5 5 6 / 0.7) 0%, rgb(5 5 6 / 0.3) 72%, rgb(5 5 6 / 0.12) 100%),
-      linear-gradient(180deg, rgb(5 5 6 / 0.08) 24%, rgb(5 5 6 / 0.9) 100%);
+      linear-gradient(90deg, rgb(5 5 6 / 0.82) 0%, rgb(5 5 6 / 0.54) 72%, rgb(5 5 6 / 0.3) 100%),
+      linear-gradient(180deg, rgb(5 5 6 / 0.12) 18%, rgb(5 5 6 / 0.72) 58%, rgb(5 5 6 / 0.97) 100%);
+  }
+
+  .editorial-hero-title {
+    text-shadow: 0 2px 18px rgb(0 0 0 / 0.8);
+  }
+
+  .editorial-hero-copy .eyebrow {
+    color: rgb(255 255 255 / 0.88);
+  }
+
+  :root[dir="rtl"] .editorial-hero-title {
+    max-width: 24ch;
+    font-size: clamp(1.85rem, 7.4vw, 2.45rem);
+    line-height: 1.18;
+    letter-spacing: 0;
+    unicode-bidi: plaintext;
   }
 }
 

@@ -161,11 +161,7 @@ export default async function HomePage({
                           }}
                         />
                       )}
-                      <div
-                        aria-hidden
-                        className="absolute inset-0"
-                        style={{ background: "var(--hero-scrim-v)" }}
-                      />
+                      <div aria-hidden className="absolute inset-0 category-card-scrim" />
                     </div>
                     <div className="absolute inset-x-0 bottom-0 p-4">
                       <h3 className="text-[15px] font-semibold text-fg">

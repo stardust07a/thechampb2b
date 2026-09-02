@@ -4,7 +4,7 @@ Bu değişiklik, kullanıcıyla birlikte seçilip onaylanan ana sayfa deneyimidi
 
 ## Kullanıcının istediği davranış
 
-- Hero, açık ve koyu site temasında da sinematik koyu görünür. Hero bittikten sonra sayfa normal seçili temaya devam eder.
+- Site şu an yalnızca koyu modda sunulur. Tema düğmesi arayüzden kaldırılmıştır; açık tema kodu ve tokenları ileride yeniden etkinleştirmek için silinmemiştir.
 - Video otomatik oynatılmaz. Kullanıcı aşağı/yukarı kaydırdıkça video ileri/geri sarar.
 - Masaüstünde yaklaşık 2.500 px kaydırma mesafesi vardır: beş anlatım aşaması başına yaklaşık 500 px.
 - Aşamalar: Source, Develop, Produce, Brand, Deliver. Metin videonun içine gömülü değildir; erişilebilir ve çevrilebilir HTML katmanıdır.
@@ -67,10 +67,10 @@ Kullanıcının son kararıyla admin panelindeki `video:1`–`video:8` yuvaları
 
 Aktif medya yuvaları:
 
-- `page:what-we-do:hero` → `/media/generated/what-we-do-hero-v2.webp`
+- `page:what-we-do:hero` → `/media/generated/what-we-do-hero-v3.webp`
 - `page:manufacturing:hero` → `/media/generated/manufacturing-hero-v2.webp`
-- `page:about:hero` → `/media/generated/about-hero-v2.webp`
-- `page:home:banner2` → `/media/generated/home-capabilities-v2.webp`
+- `page:about:hero` → `/media/generated/about-hero-v3.webp`
+- `page:home:banner2` → `/media/generated/home-capabilities-v3.webp`
 
 Ana sayfa banner başlığı artık “Eskizden sevkiyata” değil, “Markanıza özel üretim”dir. Metinleri tekrar eski lojistik iddiasına çevirmeyin.
 
@@ -81,3 +81,18 @@ Ana sayfa banner başlığı artık “Eskizden sevkiyata” değil, “Markanı
 - Güncel varsayılan ticari değerler: minimum sipariş 500, logo baskı 1.000, özel tasarım 1.000, etiket değişimi 1.000, numune 7–15 gün, toplu üretim 15–45 gün.
 - Ana sayfa ve üretim sayfasındaki şart metinleri sabit sayı taşımaz; ayarları `getPublicSiteSettings()` üzerinden dinamik biçimde gösterir.
 - `next.config.ts` içindeki `devIndicators: false`, LAN'daki telefon önizlemesinde Next.js geliştirme rozetinin tasarımın üstüne binmesini engeller.
+
+## Sepet, mobil davranış ve terminoloji
+
+- Üst menüdeki eski doküman/teklif simgesi artık sepet simgesidir ve adet rozeti taşır.
+- Sepette ürün varken telefonda sayfanın altında sabit `Sepete git` çubuğu görünür. Çubuk toplam kalem ve adet bilgisini gösterir, içeriği kapatmaması için sayfada güvenli boşluk bırakır ve sepet sayfasında kendini gizler.
+- Ürün detayında beden seçilip o bedene adet girilerek talep listesine eklenir. Talep; sitedeki form, WhatsApp veya e-posta üzerinden gönderilebilir.
+- Kumaş ağırlığı birimi düz `gr` veya `gsm` etiketiyle değil, teknik olarak doğru `g/m²` gösterimiyle yazılır. Admin alanları ve dört dildeki ürün etiketleri aynı terminolojiyi kullanır.
+- `320`, `390`, `768` ve `1440` px genişliklerde ana sayfa, katalog, kategori, ürün detayı, süreç, üretim, hakkımızda, iletişim, sepet ve yasal sayfa şablonları kontrol edilmiştir. Çok dar telefonlarda başlığın taşmasını engellemek için yalnızca küçük `GLOBAL` eki gizlenir; THE CHAMP markası kalır.
+- Kategori kartlarının koyu perdesi hafifletildi; fotoğraflar daha aydınlık görünürken alt başlık kontrastı korunur.
+
+## Performans notları
+
+- Scroll hero videosu ilk açılışta tamamını indirmez; yalnızca metadata ön yüklenir. Özellikle yaklaşık 10 MB'lık mobil videonun ilk içerikle yarışması engellenmiştir.
+- Katalog ve kategori ilk sayfa ürün sayısı `PER_PAGE = 35` ortak sabitine bağlanmıştır. Masaüstündeki 5 sütunlu düzende 7 tam sıra görünür; devamı mevcut `Daha fazla` akışıyla gelir.
+- Responsive QA sırasında yatay taşma, kırık görsel, eksik ana başlık ve 16 px altı mobil form yazısı kontrol edilmiştir. Tıklanabilir kritik mobil kontroller en az 44 px hedef boyutundadır.

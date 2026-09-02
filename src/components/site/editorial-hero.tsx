@@ -53,11 +53,11 @@ export function EditorialHero({
           </>
         ) : null}
 
-        <Container className="w-full py-10 md:py-20">
-          <p className="eyebrow text-white/70">{eyebrow}</p>
+        <Container className="editorial-hero-copy w-full py-10 md:py-20">
+          <p className="eyebrow text-white/90">{eyebrow}</p>
           <h1
             className={cn(
-              "mt-5 max-w-[19ch] text-[clamp(2rem,10vw,3.6rem)] font-bold leading-[1.02] tracking-[-0.04em] text-white",
+              "editorial-hero-title mt-5 max-w-[19ch] text-[clamp(1.9rem,8vw,3.6rem)] font-bold leading-[1.08] tracking-[-0.035em] text-white",
               titleClassName,
             )}
           >
@@ -72,7 +72,7 @@ export function EditorialHero({
       </div>
 
       {body ? (
-        <Container className="bg-bg py-8 text-[16px] leading-relaxed text-muted md:hidden">
+        <Container className="bg-bg py-8 text-[17px] leading-[1.8] text-fg/75 md:hidden">
           {body}
         </Container>
       ) : null}

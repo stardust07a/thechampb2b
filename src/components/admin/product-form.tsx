@@ -251,7 +251,7 @@ export function ProductForm({
 
         <div className="grid gap-4 sm:grid-cols-4">
           <div>
-            <Label htmlFor="gsm">Gramaj (gsm)</Label>
+            <Label htmlFor="gsm">Kumaş gramajı (g/m²)</Label>
             <Input
               id="gsm"
               name="gsm"

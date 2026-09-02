@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { Outfit, Tajawal } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -9,10 +9,11 @@ import "../globals.css";
 import { dirFor, routing, type Locale } from "@/i18n/routing";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
-import { ThemeScript } from "@/components/site/theme-script";
 import { CurrencyProvider } from "@/components/site/currency-provider";
 import { InquiryProvider } from "@/components/site/inquiry-store";
+import { MobileCartBar } from "@/components/site/mobile-cart-bar";
 import { getSettings, whatsappLink } from "@/lib/settings";
+import { logEnvIssues } from "@/lib/env-check";
 
 /** Brief §3.2: tek aile Outfit, Arapça için Tajawal. Subset: latin, latin-ext, arabic. */
 const outfit = Outfit({
@@ -28,6 +29,14 @@ const tajawal = Tajawal({
   display: "swap",
   weight: ["300", "400", "500", "700", "800"],
 });
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#0a0a0b",
+};
+
+// Kritik yapılandırma sorunları sunucu loglarında görünsün.
+logEnvIssues();
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -78,12 +87,9 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={dirFor(locale)}
+      data-theme="dark"
       className={`${outfit.variable} ${tajawal.variable} h-full`}
-      suppressHydrationWarning
     >
-      <head>
-        <ThemeScript />
-      </head>
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
           <CurrencyProvider defaultCurrency={settings.defaultCurrency}>
@@ -104,6 +110,7 @@ export default async function LocaleLayout({
                 {children}
               </main>
               <Footer locale={locale as Locale} />
+              <MobileCartBar />
               <Toaster
                 position="bottom-right"
                 dir={dirFor(locale)}

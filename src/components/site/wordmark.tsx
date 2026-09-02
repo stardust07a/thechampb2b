@@ -17,7 +17,7 @@ export function Wordmark({ className }: { className?: string }) {
       )}
     >
       <span className="chrome-text">THE CHAMP</span>
-      <span className="text-[0.62em] font-medium uppercase tracking-[0.18em] text-faint">
+      <span className="wordmark-global text-[0.62em] font-medium uppercase tracking-[0.18em] text-faint">
         Global
       </span>
     </span>

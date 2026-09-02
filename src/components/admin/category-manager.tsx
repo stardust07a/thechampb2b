@@ -259,7 +259,7 @@ function CategoryForm({
         <legend className="eyebrow mb-3">Varsayılan üretim bilgisi</legend>
         <div className="grid gap-4 sm:grid-cols-3">
           <div>
-            <Label htmlFor={`gsm-${category?.id ?? "new"}`}>Gramaj</Label>
+            <Label htmlFor={`gsm-${category?.id ?? "new"}`}>Kumaş gramajı (g/m²)</Label>
             <Input
               id={`gsm-${category?.id ?? "new"}`}
               name="gsm"

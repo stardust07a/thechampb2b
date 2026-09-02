@@ -168,7 +168,7 @@ export function HeroExperience({
           className="cinema-hero-video absolute inset-0 -z-30 size-full object-cover object-center"
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           poster="/media/hero/home-journey-start.jpg"
           aria-label={videoLabel}
           onLoadedMetadata={syncVideoMetadata}
@@ -311,7 +311,7 @@ export function HeroExperience({
           <button
             type="button"
             onClick={skipIntro}
-            className="mt-3 flex items-center gap-2 rounded-full border border-white/25 bg-black/25 px-3 py-2 text-[11px] font-medium uppercase tracking-[0.12em] text-white/80 backdrop-blur-md transition-colors hover:border-white/50 hover:text-white"
+            className="mt-3 flex min-h-11 items-center gap-2 rounded-full border border-white/25 bg-black/25 px-3 py-2 text-[11px] font-medium uppercase tracking-[0.12em] text-white/80 backdrop-blur-md transition-colors hover:border-white/50 hover:text-white"
           >
             {skipLabel}
             <ArrowDown className="size-3.5" aria-hidden />
@@ -322,7 +322,7 @@ export function HeroExperience({
           type="button"
           onClick={skipIntro}
           hidden={staticHero}
-          className="absolute bottom-4 end-4 flex items-center gap-2 rounded-full border border-white/25 bg-black/40 px-3 py-2 text-[11px] font-medium uppercase tracking-[0.1em] text-white/85 backdrop-blur-md md:hidden"
+          className="absolute bottom-4 end-4 flex min-h-11 items-center gap-2 rounded-full border border-white/25 bg-black/40 px-3 py-2 text-[11px] font-medium uppercase tracking-[0.1em] text-white/85 backdrop-blur-md md:hidden"
         >
           {skipLabel}
           <ArrowDown className="size-3.5" aria-hidden />

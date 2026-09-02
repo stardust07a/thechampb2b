@@ -41,7 +41,7 @@ export async function submitInquiry(raw: unknown): Promise<InquiryResult> {
     headerList.get("x-real-ip") ??
     "unknown";
 
-  const limit = checkRateLimit(`inquiry:${ip}`);
+  const limit = await checkRateLimit(`inquiry:${ip}`);
   if (!limit.ok) return { ok: false, error: "rateLimited" };
 
   try {

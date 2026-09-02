@@ -20,6 +20,8 @@
     "currency": "العملة",
     "inquiry": "قائمة طلب العرض",
     "inquiryCount": "{count} منتج في قائمة طلب العرض",
+    "goToCart": "الذهاب إلى السلة",
+    "cartSummary": "{count} عناصر · {quantity} قطعة",
     "whatsapp": "واتساب",
     "skipToContent": "الانتقال إلى المحتوى"
   },

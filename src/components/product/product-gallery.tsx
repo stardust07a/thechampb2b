@@ -186,7 +186,7 @@ export function ColorPicker({
               aria-label={colorLabel(v.color, locale as AppLocale)}
               aria-pressed={i === activeIndex}
               className={cn(
-                "grid size-9 place-items-center rounded-full border-2 transition-colors duration-200",
+                "grid size-11 place-items-center rounded-full border-2 transition-colors duration-200",
                 i === activeIndex ? "border-chrome-2" : "border-transparent hover:border-line",
               )}
             >

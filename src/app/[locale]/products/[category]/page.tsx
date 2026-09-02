@@ -11,7 +11,13 @@ import { ProductGrid } from "@/components/product/product-grid";
 import { ProductCard } from "@/components/product/product-card";
 import { LoadMore } from "@/components/product/load-more";
 import { EmptyResults } from "@/components/product/empty-results";
-import { getCategories, getCategoryBySlug, getFilterFacets, listProducts } from "@/lib/products";
+import {
+  getCategories,
+  getCategoryBySlug,
+  getFilterFacets,
+  listProducts,
+  PER_PAGE,
+} from "@/lib/products";
 import { getSettings } from "@/lib/settings";
 import { prisma } from "@/lib/prisma";
 import { parseFilters } from "../page";
@@ -74,7 +80,7 @@ export default async function CategoryPage({
   const tNav = await getTranslations({ locale, namespace: "nav" });
   const settings = await getSettings();
 
-  const perPage = 48;
+  const perPage = PER_PAGE;
   const pages = filters.page ?? 1;
 
   const [result, facets, allCategories] = await Promise.all([

@@ -1,5 +1,6 @@
 import { existsSync } from "node:fs";
 
+import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
 import { getSettings } from "@/lib/settings";
 import { resolvePrices, TIERS } from "@/lib/price";
@@ -33,8 +34,22 @@ export async function GET(
 
   const url = new URL(request.url);
   const categorySlug = url.searchParams.get("category") ?? undefined;
-  const refresh = url.searchParams.get("refresh") === "1";
   const cacheKey = `${locale}:${categorySlug ?? "all"}`;
+
+  /**
+   * Önbelleği atlamak PAHALI bir iştir (819 ürün, ~8 MB, ~7 sn). Herkese açık
+   * olsaydı `?refresh=1` ile art arda istek atarak sunucu tüketilebilirdi.
+   * Bu yüzden yalnızca oturum açmış yöneticiye izin veriliyor; panelde
+   * "Yeniden üret" butonu zaten bu koşulu sağlıyor.
+   */
+  let refresh = false;
+  if (url.searchParams.get("refresh") === "1") {
+    const session = await auth();
+    if (!session?.user) {
+      return new Response("Önbellek yenileme yetkisi gerekir.", { status: 401 });
+    }
+    refresh = true;
+  }
 
   const hit = cache.get(cacheKey);
   if (!refresh && hit && Date.now() - hit.at < TTL_MS) {

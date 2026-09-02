@@ -236,6 +236,40 @@ Kurumsal e-posta Hostinger'da kalır, dokunmayın.
 - [ ] QR kodla telefondan açınca ilk ekranda marka mesajı + MOQ + iki CTA var
 - [ ] Google Search Console'a `sitemap.xml` gönderildi
 
+### Güvenlik ve işletim
+
+**Başlıklar** `next.config.ts` içinde tanımlı ve derleme fazına göre değişir:
+CSP, HSTS (yalnızca yayında), `X-Frame-Options: DENY`, `nosniff`,
+`Referrer-Policy`, `Permissions-Policy`. Panel ve `/api/admin/*` yanıtları
+`no-store`. CSP'de `script-src 'unsafe-inline'` zorunlu: tema ilk boyamadan
+önce satır içi script ile yazılıyor ve Next hydration verisini satır içi
+basıyor. Yeni bir dış kaynak (analytics, harita, font) eklerken CSP'ye de
+eklemeyi unutmayın, yoksa sessizce engellenir.
+
+**Hız sınırı** `src/lib/rate-limit.ts`. `UPSTASH_REDIS_REST_URL` +
+`UPSTASH_REDIS_REST_TOKEN` tanımlıysa sayaç Redis'te paylaşılır; yoksa bellekte
+tutulur. Vercel'de örnek başına ayrı sayar, bu yüzden yayında Upstash önerilir.
+Redis erişilemezse istek reddedilmez, belleğe düşülür — form çalışmaya devam eder.
+
+**Yapılandırma denetimi** `/api/health`. Anonim erişimde yalnızca
+`status`, `database`, `publishedProducts` döner; oturum açmış yöneticiye ayrıca
+eksik/yanlış ortam değişkenlerinin listesi gösterilir. Uptime izlemeyi
+(UptimeRobot, Better Stack) 5 dakikalık aralıkla bu uca bağlayın — 200 dışı
+yanıt alarm üretsin.
+
+**Yedekleme.** Neon'da otomatik "point-in-time restore" vardır; ücretsiz
+katmanda geriye dönüş penceresi kısadır. Katalog verisi zaten
+`data/products.normalized.json` içinde ve `db:seed` ile yeniden kurulabilir;
+geri alınamaz olan **teklif talepleri** ve **panelden girilen fiyatlardır**.
+Bunlar için haftalık `pg_dump` alın:
+
+```bash
+pg_dump "<neon-url>" --no-owner --format=custom -f yedek-$(date +%F).dump
+```
+
+**Hata takibi.** Şu an sunucu logları Vercel'de tutuluyor. Kalıcı hata takibi
+için Sentry eklenebilir (`@sentry/nextjs`); henüz kurulmadı.
+
 ### Bilinen sınırlar
 
 - **PDF katalog** ~8 MB ve ~7 sn sürüyor. Route `maxDuration = 60` ile

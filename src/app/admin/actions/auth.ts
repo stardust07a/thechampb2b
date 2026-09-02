@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { AuthError } from "next-auth";
 
 import { signIn, signOut } from "@/auth";
-import { clearLoginRateLimit } from "@/lib/rate-limit-login";
+import { clearLoginRateLimit } from "@/lib/rate-limit";
 
 export async function signOutAction() {
   await signOut({ redirectTo: "/admin/login" });
@@ -31,6 +31,6 @@ export async function loginAction(
     throw error;
   }
 
-  clearLoginRateLimit(email);
+  await clearLoginRateLimit(email);
   redirect(from.startsWith("/admin") ? from : "/admin");
 }
