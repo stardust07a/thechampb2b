@@ -1,9 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Tipografik wordmark.
- * Logo dosyaları (SVG) henüz gelmedi (brief §16) — geldiğinde bu bileşenin
- * içi <Image> ile değiştirilir, kullanıldığı yerlerin hiçbiri değişmez.
+ * Tipografik wordmark. Taç amblemi yalnızca tarayıcı ikonunda kullanılır.
  */
 export function Wordmark({ className }: { className?: string }) {
   return (

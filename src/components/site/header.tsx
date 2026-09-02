@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/section";
 import { cn } from "@/lib/utils";
 import { useScrolled } from "@/lib/browser-state";
+import { CURRENCY_SWITCHING_ENABLED } from "@/lib/features";
 import { CurrencySwitcher } from "./currency-switcher";
 import { InquiryButton } from "./inquiry-button";
 import { LocaleSwitcher } from "./locale-switcher";
@@ -71,7 +72,9 @@ export function Header({ whatsappHref }: { whatsappHref: string }) {
         </nav>
 
         <div className="ms-auto flex items-center gap-1 md:gap-2">
-          <CurrencySwitcher className="hidden sm:inline-flex" />
+          {CURRENCY_SWITCHING_ENABLED ? (
+            <CurrencySwitcher className="hidden sm:inline-flex" />
+          ) : null}
           <LocaleSwitcher />
           <InquiryButton />
           <a
@@ -126,7 +129,7 @@ export function Header({ whatsappHref }: { whatsappHref: string }) {
                 </nav>
 
                 <div className="mt-auto flex items-center justify-between gap-3 pt-6">
-                  <CurrencySwitcher />
+                  {CURRENCY_SWITCHING_ENABLED ? <CurrencySwitcher /> : null}
                   <a
                     href={whatsappHref}
                     target="_blank"

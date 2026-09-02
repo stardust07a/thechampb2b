@@ -36,6 +36,8 @@
     "heroProgress": "Giriş ilerlemesi",
     "heroVideoLabel": "Pamuktan bitmiş ürüne üretim yolculuğu",
     "videoShowcaseTitle": "FİKİRDEN KOLEKSİYONA — HAREKET HALİNDE",
+    "videoNavLabel": "Videolar",
+    "sectionNavigation": "Ana sayfa bölümleri",
     "heroStages": {
       "source": {
         "label": "KAYNAK",
@@ -68,7 +70,9 @@
       "pieces": "adet"
     },
     "categoriesTitle": "Kategoriler",
-    "categoriesSubtitle": "Kendi tesisimizde üretilen 16 ürün grubu.",
+    "categoriesSubtitle": "Kendi tesisimizde üretilen {count} ürün grubu.",
+    "productStylesTitle": "Ürün modelleri",
+    "productStylesSubtitle": "Kataloğumuzdaki aktif ürün modelleri.",
     "viewAll": "Tümünü gör",
     "banner2": {
       "eyebrow": "ÖZEL ÜRETİM",

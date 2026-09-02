@@ -17,6 +17,7 @@ import { getCategories, getHomeSection, listProducts } from "@/lib/products";
 import { getSettings } from "@/lib/settings";
 import { getSlot, getVideos, slotAlt } from "@/lib/media-slots";
 import { VideoReel } from "@/components/site/video-reel";
+import { HomeSectionNav, type HomeSectionLink } from "@/components/site/home-section-nav";
 import { IMAGE_PLACEHOLDER, mediaUrl } from "@/lib/media";
 import { formatNumber } from "@/lib/format";
 
@@ -91,9 +92,22 @@ export default async function HomePage({
     "global",
   ] as const;
 
+  const sectionLinks: HomeSectionLink[] = [
+    { id: "home-categories", label: t("categoriesTitle") },
+    ...(videos.length > 0
+      ? [{ id: "home-videos", label: t("videoNavLabel") }]
+      : []),
+    { id: "home-what-we-do", label: t("ecosystemTitle") },
+    { id: "home-production", label: t("productionTitle") },
+    { id: "home-why", label: t("whyTitle") },
+    { id: "home-catalog", label: t("catalogTitle") },
+    { id: "contact", label: t("contactTitle") },
+  ];
+
   return (
     <>
       <Hero locale={locale} />
+      <HomeSectionNav label={t("sectionNavigation")} sections={sectionLinks} />
 
       {/* 3 — Güven şeridi */}
       <section
@@ -115,10 +129,12 @@ export default async function HomePage({
       </section>
 
       {/* 4 — Kategoriler */}
-      <Section>
+      <Section id="home-categories" className="scroll-mt-20">
         <Container>
           <SectionHeader
-            eyebrow={t("categoriesSubtitle")}
+            eyebrow={t("categoriesSubtitle", {
+              count: formatNumber(categories.length, locale),
+            })}
             title={t("categoriesTitle")}
             action={
               <Button asChild variant="outline" size="sm">
@@ -195,7 +211,7 @@ export default async function HomePage({
       ) : null}
 
       {/* 6 — Banner 2: üretim kabiliyeti */}
-      <section className="relative isolate overflow-hidden border-b border-line">
+      <section className="relative isolate scroll-mt-20 overflow-hidden border-b border-line">
         {banner2 ? (
           <>
             <Image
@@ -284,7 +300,10 @@ export default async function HomePage({
 
       {/* Admin panelindeki dikey videolar: Banner 2 ile Ne Yapıyoruz arasında. */}
       {videos.length > 0 ? (
-        <section className="overflow-hidden border-y border-line bg-bg py-14 md:py-20">
+        <section
+          id="home-videos"
+          className="scroll-mt-20 overflow-hidden border-y border-line bg-bg py-14 md:py-20"
+        >
           <Container>
             <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-muted">
               {t("videoShowcaseTitle")}
@@ -303,10 +322,10 @@ export default async function HomePage({
       ) : null}
 
       {/* 9 — What We Do kısaltılmış şerit */}
-      <EcosystemStrip locale={locale} />
+      <EcosystemStrip locale={locale} id="home-what-we-do" />
 
       {/* 10 — Üretim ve kalite */}
-      <Section bleed className="border-y border-line">
+      <Section id="home-production" bleed className="scroll-mt-20 border-y border-line">
         <Container className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <SectionHeader title={t("productionTitle")} className="mb-6" />
@@ -348,11 +367,11 @@ export default async function HomePage({
               </div>
             ))}
             <div className="col-span-2 rounded-[--radius-card] border border-line bg-surface p-6">
-              <p className="eyebrow">{t("categoriesTitle")}</p>
+              <p className="eyebrow">{t("productStylesTitle")}</p>
               <p className="tabular mt-3 text-h2 font-bold text-fg">
                 {formatNumber(totalProducts, locale)}
               </p>
-              <p className="mt-1 text-sm text-muted">{t("categoriesSubtitle")}</p>
+              <p className="mt-1 text-sm text-muted">{t("productStylesSubtitle")}</p>
             </div>
           </div>
         </Container>
@@ -360,7 +379,7 @@ export default async function HomePage({
       </Section>
 
       {/* 11 — Neden THE CHAMP */}
-      <Section>
+      <Section id="home-why" className="scroll-mt-20">
         <Container>
           <SectionHeader title={t("whyTitle")} />
           <ul className="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
@@ -376,7 +395,7 @@ export default async function HomePage({
       </Section>
 
       {/* 12 — Katalog indir */}
-      <Section bleed className="border-y border-line">
+      <Section id="home-catalog" bleed className="scroll-mt-20 border-y border-line">
         <Container className="flex flex-wrap items-center justify-between gap-8">
           <div className="max-w-xl">
             <h2 className="chrome-text text-h2">{t("catalogTitle")}</h2>

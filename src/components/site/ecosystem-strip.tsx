@@ -11,11 +11,11 @@ import { ECOSYSTEM_STEPS } from "@/content/what-we-do";
  * Ana sayfadaki kısaltılmış "What We Do" bloğu — brief §13.4:
  * sadece numara + İngilizce başlık + tek cümle, CTA /what-we-do'ya bağlanır.
  */
-export async function EcosystemStrip({ locale }: { locale: Locale }) {
+export async function EcosystemStrip({ locale, id }: { locale: Locale; id?: string }) {
   const t = await getTranslations({ locale, namespace: "home" });
 
   return (
-    <Section>
+    <Section id={id} className="scroll-mt-20">
       <Container>
         <SectionHeader
           eyebrow={t("ecosystemSubtitle")}

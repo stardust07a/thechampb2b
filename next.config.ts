@@ -69,7 +69,7 @@ function buildConfig(phase: string): NextConfig {
   return {
     // Geliştirme sitesini aynı Wi-Fi/LAN üzerindeki cihazlardan açarken Next'in
     // dev asset ve HMR isteklerini engellememesi gerekir.
-    allowedDevOrigins: ["192.168.2.24"],
+    allowedDevOrigins: ["127.0.0.1", "localhost", "192.168.2.24"],
     // Telefonda yerel önizleme yapılırken görünen kırmızı Next geliştirme rozeti
     // gerçek site arayüzüyle karışmasın. Derleme hataları yine gösterilir.
     devIndicators: false,

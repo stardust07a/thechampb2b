@@ -36,6 +36,8 @@
     "heroProgress": "Intro progress",
     "heroVideoLabel": "From cotton to finished garment manufacturing journey",
     "videoShowcaseTitle": "FROM CONCEPT TO COLLECTION — IN MOTION",
+    "videoNavLabel": "Videos",
+    "sectionNavigation": "Homepage sections",
     "heroStages": {
       "source": {
         "label": "SOURCE",
@@ -68,7 +70,9 @@
       "pieces": "pcs"
     },
     "categoriesTitle": "Categories",
-    "categoriesSubtitle": "16 product groups, produced in our own facility.",
+    "categoriesSubtitle": "{count} product groups, produced in our own facility.",
+    "productStylesTitle": "Product styles",
+    "productStylesSubtitle": "Active product styles in our catalogue.",
     "viewAll": "View all",
     "banner2": {
       "eyebrow": "CUSTOM MANUFACTURING",

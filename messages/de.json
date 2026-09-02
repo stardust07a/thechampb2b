@@ -36,6 +36,8 @@
     "heroProgress": "Intro-Fortschritt",
     "heroVideoLabel": "Fertigungsreise von der Baumwolle bis zum fertigen Kleidungsstück",
     "videoShowcaseTitle": "VON DER IDEE ZUR KOLLEKTION — IN BEWEGUNG",
+    "videoNavLabel": "Videos",
+    "sectionNavigation": "Startseitenbereiche",
     "heroStages": {
       "source": {
         "label": "URSPRUNG",
@@ -68,7 +70,9 @@
       "pieces": "Stück"
     },
     "categoriesTitle": "Kategorien",
-    "categoriesSubtitle": "16 Produktgruppen aus eigener Fertigung.",
+    "categoriesSubtitle": "{count} Produktgruppen aus eigener Fertigung.",
+    "productStylesTitle": "Produktmodelle",
+    "productStylesSubtitle": "Aktive Produktmodelle in unserem Katalog.",
     "viewAll": "Alle ansehen",
     "banner2": {
       "eyebrow": "INDIVIDUELLE PRODUKTION",

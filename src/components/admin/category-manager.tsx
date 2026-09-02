@@ -53,12 +53,18 @@ export function CategoryManager({ categories }: { categories: CategoryRow[] }) {
   const [pending, startTransition] = useTransition();
 
   const byId = new Map(categories.map((c) => [c.id, c]));
-  const ordered = order.map((id) => byId.get(id)).filter((c): c is CategoryRow => Boolean(c));
+  const effectiveOrder = [
+    ...order.filter((id) => byId.has(id)),
+    ...categories.map((c) => c.id).filter((id) => !order.includes(id)),
+  ];
+  const ordered = effectiveOrder
+    .map((id) => byId.get(id))
+    .filter((c): c is CategoryRow => Boolean(c));
 
   function move(index: number, delta: number) {
     const target = index + delta;
-    if (target < 0 || target >= order.length) return;
-    const next = [...order];
+    if (target < 0 || target >= effectiveOrder.length) return;
+    const next = [...effectiveOrder];
     [next[index], next[target]] = [next[target], next[index]];
     setOrder(next);
     startTransition(async () => {
@@ -73,7 +79,12 @@ export function CategoryManager({ categories }: { categories: CategoryRow[] }) {
     if (!confirm(`"${category.names.tr || category.slug}" silinecek. Emin misiniz?`)) return;
     startTransition(async () => {
       const result = await deleteCategory(category.id);
-      if (result.ok) toast.success(result.message);
+      if (result.ok) {
+        toast.success(result.message);
+        if (category.productCount === 0) {
+          setOrder((current) => current.filter((id) => id !== category.id));
+        }
+      }
       else toast.error(result.message);
       router.refresh();
     });

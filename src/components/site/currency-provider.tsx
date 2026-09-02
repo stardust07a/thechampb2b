@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useMemo } from "react";
 
 import { notifyCookieChange, useCookie } from "@/lib/browser-state";
+import { CURRENCY_SWITCHING_ENABLED } from "@/lib/features";
 import type { Currency } from "@/lib/format";
 
 /**
@@ -27,9 +28,11 @@ export function CurrencyProvider({
   children: React.ReactNode;
 }) {
   const raw = useCookie(COOKIE, defaultCurrency);
-  const currency: Currency = raw === "EUR" ? "EUR" : "USD";
+  const currency: Currency =
+    CURRENCY_SWITCHING_ENABLED && raw === "EUR" ? "EUR" : "USD";
 
   const setCurrency = useCallback((next: Currency) => {
+    if (!CURRENCY_SWITCHING_ENABLED) return;
     document.cookie = `${COOKIE}=${next}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
     notifyCookieChange();
   }, []);

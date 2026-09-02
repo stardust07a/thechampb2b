@@ -36,6 +36,8 @@
     "heroProgress": "تقدّم المقدمة",
     "heroVideoLabel": "رحلة التصنيع من القطن إلى المنتج النهائي",
     "videoShowcaseTitle": "من الفكرة إلى المجموعة — في حركة",
+    "videoNavLabel": "الفيديوهات",
+    "sectionNavigation": "أقسام الصفحة الرئيسية",
     "heroStages": {
       "source": {
         "label": "المصدر",
@@ -68,7 +70,9 @@
       "pieces": "قطعة"
     },
     "categoriesTitle": "الفئات",
-    "categoriesSubtitle": "16 مجموعة منتجات من إنتاج مصنعنا.",
+    "categoriesSubtitle": "{count} مجموعة منتجات من إنتاج مصنعنا.",
+    "productStylesTitle": "موديلات المنتجات",
+    "productStylesSubtitle": "موديلات المنتجات النشطة في كتالوجنا.",
     "viewAll": "عرض الكل",
     "banner2": {
       "eyebrow": "إنتاج مخصص",

@@ -13,6 +13,12 @@ async function requireAdmin() {
   if (!session?.user) throw new Error("Yetkisiz");
 }
 
+/** Kategori verisi ana sayfa, katalog ve alt sayfalarda ortak kullanılıyor. */
+function revalidateCategoryViews() {
+  revalidatePath("/admin/categories");
+  revalidatePath("/", "layout");
+}
+
 /* ------------------------------------------------------------- kategori */
 
 const decimalish = z
@@ -91,7 +97,7 @@ export async function saveCategory(
       });
     }
 
-    revalidatePath("/admin/categories");
+    revalidateCategoryViews();
     return { ok: true, message: id ? "Kategori güncellendi." : "Kategori oluşturuldu." };
   } catch (error) {
     const message =
@@ -107,7 +113,7 @@ export async function reorderCategories(ids: string[]): Promise<ActionResult> {
   await prisma.$transaction(
     ids.map((id, index) => prisma.category.update({ where: { id }, data: { order: index } })),
   );
-  revalidatePath("/admin/categories");
+  revalidateCategoryViews();
   return { ok: true, message: "Sıralama kaydedildi." };
 }
 
@@ -115,13 +121,17 @@ export async function deleteCategory(id: string): Promise<ActionResult> {
   await requireAdmin();
   const count = await prisma.product.count({ where: { categoryId: id } });
   if (count > 0) {
+    // Ürünleri yanlışlıkla silmek yerine kategoriyi tüm vitrinden kaldır.
+    // Ürünler başka kategoriye taşındıktan sonra ikinci silme kalıcı olur.
+    await prisma.category.update({ where: { id }, data: { active: false } });
+    revalidateCategoryViews();
     return {
-      ok: false,
-      message: `Bu kategoride ${count} ürün var. Önce ürünleri başka kategoriye taşıyın.`,
+      ok: true,
+      message: `Kategori, içindeki ${count} ürün korunarak vitrinden kaldırıldı. Ürünü taşıdıktan sonra tamamen silebilirsiniz.`,
     };
   }
   await prisma.category.delete({ where: { id } });
-  revalidatePath("/admin/categories");
+  revalidateCategoryViews();
   return { ok: true, message: "Kategori silindi." };
 }
 
