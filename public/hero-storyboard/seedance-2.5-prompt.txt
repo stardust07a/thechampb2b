@@ -1,0 +1,44 @@
+Create a premium 7-second cinematic website hero video for THE CHAMP GLOBAL, a B2B private-label apparel manufacturer based in Istanbul.
+
+ACTIVE REFERENCES
+@image1 = MASTER PRODUCT: exact black oversized pullover hoodie. Lock its sculptural no-drawstring hood, extra-wide dropped shoulders, voluminous sleeves, long ribbed cuffs, kangaroo pocket, hem, matte-black heavyweight fabric and unbranded appearance throughout the full video.
+@image2 = DESIGN composition, lighting and scene reference.
+@image3 = DEVELOP composition, lighting and scene reference.
+@image4 = PRODUCE composition, lighting and scene reference.
+@image5 = INSPECT composition, lighting and scene reference.
+@image6 = DELIVER composition, lighting and scene reference.
+
+REFERENCE PRIORITY
+Use @image1 as the absolute source of truth for the product. Use @image2 through @image6 for scene, blocking, lighting and camera composition. Do not allow later references to redesign the hoodie.
+
+FORMAT
+Controlled multi-shot sequence, exactly 7 seconds, 21:9 ultra-wide, native 1080p, 24 fps, photorealistic live action, seamless loop, muted-friendly with no dialogue or vocals.
+
+GLOBAL COMPOSITION
+All important action remains in the RIGHT 55% of every shot. The LEFT 45% remains deep black-to-charcoal, quiet, low-detail and free of objects for white HTML website copy. No split screen, borders or baked-in graphics.
+
+PICTURE MODE
+Premium European fashion campaign blended with authentic Istanbul garment manufacturing. ARRI ALEXA commercial aesthetic, cool monochrome black and charcoal palette, soft directional light, restrained highlights, tactile black fabric, shallow depth of field and subtle film grain. Precise, sophisticated and trustworthy. Natural real-time motion; no slow motion.
+
+SHOT TIMELINE
+
+[SHOT 1 — 0.0–1.4s — DESIGN]
+Begin from near-black as a black sleeve passes close to the lens and reveals @image2. A designer's hand completes the final clean line of the exact hoodie technical sketch. Subtle controlled camera push-in. The paper and fabric swatch stay on the right; the left remains dark.
+
+[SHOT 2 — 1.4–2.8s — DEVELOP]
+Match-cut the black fabric swatch into the fabric roll in @image3. Expert hands inspect the dense matte-black textile, then complete one precise cutting movement along the hoodie pattern. Physically realistic fabric and scissors.
+
+[SHOT 3 — 2.8–4.2s — PRODUCE]
+Cut on the downward scissor movement to the industrial needle in @image4. The needle makes a short accurate seam on the same black fabric while skilled hands attach a blank black private-label tag at the inner neckline. No readable label text.
+
+[SHOT 4 — 4.2–5.6s — INSPECT]
+Transition along the seam into @image5. Expert hands align a metal measuring tape, inspect stitching and smooth the completed hoodie once. Keep the hood, shoulder and kangaroo pocket identifiable as @image1.
+
+[SHOT 5 — 5.6–7.0s — DELIVER]
+Match-cut to @image6. The anonymous model wears the exact @image1 hoodie in a restrained confident editorial pose. The unbranded export box remains subtle. End as the model's black sleeve sweeps across the lens from right to left, returning the frame to the same near-black shape and direction as the opening for a seamless loop.
+
+CONTINUITY LOCK
+The same exact @image1 hoodie exists across all shots. Never change its color, proportions, hood shape, pocket, sleeves, cuffs, seams or fabric. No crewneck, zipper, drawstrings, crop, logo or alternate garment. Do not copy any recognizable identity from outside the active references.
+
+STRICT EXCLUSIONS
+No text, captions, subtitles, letters, numbers, logos, watermarks or interface elements inside the video. No bright objects or activity in the left text-safe area. No malformed hands, extra fingers, broken tools, impossible sewing mechanics, warped seams, duplicated garments, flicker, strobing, aggressive camera shake, speed ramps, glossy synthetic fabric, cheap warehouse styling or unrelated stock-footage montage.

@@ -1,0 +1,447 @@
+{
+  "uygulandi": "2026-08-31T19:00:38.555Z",
+  "excelModelSayisi": 900,
+  "siralama": "Excel satır sırası — en üstteki en yeni",
+  "yayinda": 711,
+  "gorselYokTaslagaAlindi": 0,
+  "arsivlenen": 108,
+  "arsivlenenler": [
+    {
+      "kod": "TC-SWE-0558",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-BDY-0444",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-BDY-0445",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0759",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0787",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0443",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0451",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-DRS-0653",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-DRS-0654",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-DRS-0655",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-DRS-0656",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-JKT-0808",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-JKT-0812",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-JKT-0813",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-POL-0722",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SHT-0793",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SHT-0802",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SHR-0323",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SHR-0364",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SKT-0115",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWP-0550",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0799",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0800",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0805",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0310",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0806",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0731",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0732",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0749",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0803",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0804",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRK-0549",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0388",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0391",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0408",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0409",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0439",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0441",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0470",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0505",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0506",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0545",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0642",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0691",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0695",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0719",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0728",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0791",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0795",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRK-0578",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRS-0464",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRS-0623",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRS-0818",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWP-0467",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0536",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0796",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0452",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0454",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0456",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0523",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0788",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0789",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0790",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SET-0819",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-DRS-0657",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-JKT-0816",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-LEG-0446",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SHR-0114",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWP-0611",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0546",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0798",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0567",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0568",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0576",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0577",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0580",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0736",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0738",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0740",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0741",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0743",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0750",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0751",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0755",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0757",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0758",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0760",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0761",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0768",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0769",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0770",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0784",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0809",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0811",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0814",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0815",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-SWE-0817",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0392",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0410",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0411",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0412",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0413",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TSH-0535",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRK-0785",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRK-0794",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRK-0797",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRK-0801",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    },
+    {
+      "kod": "TC-TRK-0807",
+      "sebep": "Excel'de tüm satırları arşivlenmiş"
+    }
+  ],
+  "sonDurum": {
+    "yayinda": 711,
+    "arsiv": 108,
+    "taslak": 0
+  }
+}

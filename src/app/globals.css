@@ -1,26 +1,559 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ==========================================================================
+   THE CHAMP GLOBAL — tasarım token katmanı
+   Brief §3.1. Hiçbir renk doğrudan yazılmaz; her renk bir token üzerinden gelir.
+   Tema `data-theme` attribute'u ile değişir, varsayılan dark.
+   ========================================================================== */
+
+:root,
+:root[data-theme="dark"] {
+  --bg: #0a0a0b;
+  --bg-2: #0f0f11;
+  --surface: #131315;
+  --surface-2: #1a1a1d;
+  --border: #26262a;
+  --border-soft: #1d1d21;
+  --text: #f5f5f7;
+  --text-muted: #8b8d93;
+  /* Ölçüldü: #5C5E65 her zeminde AA'nın altındaydı (2.87–3.06).
+     Ürün kodu ve beden aralığı bu tokenla basılıyor — okunmaları gerekiyor.
+     #7F828C: bg 5.16:1, surface-2 4.53:1. */
+  --text-faint: #7f828c;
+  --chrome-1: #7e818c;
+  --chrome-2: #c9cbd4;
+  --chrome-3: #ffffff;
+  --chrome-grad: linear-gradient(
+    120deg,
+    #7e818c 0%,
+    #c9cbd4 35%,
+    #ffffff 50%,
+    #c9cbd4 65%,
+    #7e818c 100%
+  );
+  --success: #2bb863;
+  --danger: #e0524d;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+  --shadow: 0 10px 40px rgb(0 0 0 / 0.55);
+  --shadow-sm: 0 2px 12px rgb(0 0 0 / 0.35);
+
+  /* solid buton: dark'ta beyaz zemin + siyah metin */
+  --solid-bg: #ffffff;
+  --solid-text: #0a0a0b;
+  /* hero üzerindeki koyu gradyan katmanı (brief §4.1) */
+  /* Ürün fotoğrafları açık zeminli; metnin her kırılımda okunması için
+     katman yeterince koyu olmalı (brief §4.1). */
+  --hero-scrim: linear-gradient(
+    90deg,
+    rgb(10 10 11 / 0.95) 0%,
+    rgb(10 10 11 / 0.82) 38%,
+    rgb(10 10 11 / 0.42) 68%,
+    rgb(10 10 11 / 0.15) 100%
+  );
+  --hero-scrim-v: linear-gradient(
+    180deg,
+    rgb(10 10 11 / 0.55) 0%,
+    rgb(10 10 11 / 0.7) 35%,
+    rgb(10 10 11 / 0.88) 70%,
+    rgb(10 10 11 / 0.97) 100%
+  );
+  /* Fotoğrafın tamamına inen ince taban tonu — parlak kareler patlamasın */
+  --hero-tint: rgb(10 10 11 / 0.34);
+  /* Scroll-video hero, tema açık olsa bile sinematik koyu yüzeyde kalır. */
+  --cinema-bg: #050506;
+  --cinema-text: #f7f7f8;
+  --cinema-muted: #b8bac1;
+  color-scheme: dark;
 }
+
+:root[data-theme="light"] {
+  --bg: #fafafa;
+  --bg-2: #f2f2f3;
+  --surface: #ffffff;
+  --surface-2: #f7f7f8;
+  --border: #e4e4e7;
+  --border-soft: #efeff1;
+  --text: #0a0a0b;
+  --text-muted: #6b6d73;
+  /* Ölçüldü: #9A9CA3 beyaz üstünde 2.74:1 idi. #75767B → 4.53:1. */
+  --text-faint: #75767b;
+  --chrome-1: #5a5d66;
+  --chrome-2: #8b8d98;
+  --chrome-3: #26262a;
+  --chrome-grad: linear-gradient(
+    120deg,
+    #5a5d66 0%,
+    #8b8d98 35%,
+    #26262a 50%,
+    #8b8d98 65%,
+    #5a5d66 100%
+  );
+  --shadow: 0 10px 40px rgb(0 0 0 / 0.08);
+  --shadow-sm: 0 2px 12px rgb(0 0 0 / 0.06);
+
+  --solid-bg: #0a0a0b;
+  --solid-text: #fafafa;
+  --hero-scrim: linear-gradient(
+    90deg,
+    rgb(250 250 250 / 0.96) 0%,
+    rgb(250 250 250 / 0.85) 38%,
+    rgb(250 250 250 / 0.48) 68%,
+    rgb(250 250 250 / 0.18) 100%
+  );
+  --hero-scrim-v: linear-gradient(
+    180deg,
+    rgb(250 250 250 / 0.6) 0%,
+    rgb(250 250 250 / 0.74) 35%,
+    rgb(250 250 250 / 0.9) 70%,
+    rgb(250 250 250 / 0.98) 100%
+  );
+  --hero-tint: rgb(250 250 250 / 0.3);
+  color-scheme: light;
+}
+
+/* --------------------------------------------------------- Tailwind köprüsü
+   Token'lar Tailwind yardımcı sınıflarına burada bağlanır: bg-surface,
+   text-muted, border-line, rounded-card gibi. */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-line-soft: var(--border-soft);
+  --color-fg: var(--text);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-chrome-1: var(--chrome-1);
+  --color-chrome-2: var(--chrome-2);
+  --color-chrome-3: var(--chrome-3);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-solid: var(--solid-bg);
+  --color-on-solid: var(--solid-text);
+  --color-cinema-bg: var(--cinema-bg);
+  --color-cinema-text: var(--cinema-text);
+  --color-cinema-muted: var(--cinema-muted);
+
+  --radius-card: var(--radius);
+  --radius-inner: var(--radius-sm);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-card: var(--shadow);
+  --shadow-soft: var(--shadow-sm);
+
+  --font-sans: var(--font-outfit), var(--font-tajawal), system-ui, sans-serif;
+
+  /* Tipografi ölçeği — brief §3.2 */
+  --text-display: 4.5rem;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.03em;
+  --text-h1: 2.5rem;
+  --text-h1--line-height: 1.08;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: 2rem;
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.02em;
+  --text-micro: 0.75rem;
+  --text-micro--line-height: 1.4;
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ------------------------------------------------------------------- taban */
+
+*,
+*::before,
+*::after {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-outfit), var(--font-tajawal), system-ui, sans-serif;
+  font-feature-settings: "cv11";
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+/* Arapça: Tajawal öne alınır */
+:root[lang="ar"] body {
+  font-family: var(--font-tajawal), var(--font-outfit), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Ürün kodu ve teknik veri — brief §3.2 */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+/* Etiket / eyebrow */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Krom gradyan başlık — sadece hero ve bölüm başlıklarında (brief §3.2).
+   Işık yazının üzerinden geçiyormuş gibi sürekli süzülür: gradyan element
+   genişliğinin 3 katı, konumu yavaşça kaydırılıyor. Gradyanın iki ucu aynı
+   renk (#7E818C) olduğu için döngü dikişsiz.
+   Not: brief §3.3 "sadece transform ve opacity" diyor; background-position
+   animasyonu bilinçli bir istisna — metnin kendisi krom gibi parlasın diye. */
+.chrome-text {
+  background: var(--chrome-grad);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* gradyan yazıda seçim görünmez kalmasın */
+  -webkit-text-fill-color: transparent;
+  animation: chrome-sweep 7s linear infinite;
+}
+
+/* Hero gibi büyük başlıklarda ışık biraz daha yavaş ve geniş geçsin */
+.chrome-text-slow {
+  animation-duration: 11s;
+}
+
+@keyframes chrome-sweep {
+  from {
+    background-position: 150% 0;
+  }
+  to {
+    background-position: -150% 0;
+  }
+}
+
+@supports not (background-clip: text) {
+  .chrome-text {
+    color: var(--chrome-2);
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+/* Krom gradyan kenarlık (primary buton, vurgulu kart).
+   Maske tekniği: 1px'lik halka dışında her şey kesilir, böylece zemin
+   gerçekten şeffaf kalır ve buton hangi yüzeyin üzerindeyse onu gösterir. */
+.chrome-border {
+  position: relative;
+}
+.chrome-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--chrome-grad);
+  opacity: 0.62;
+  transition: opacity 250ms var(--ease-out-quint);
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.chrome-border:hover::before {
+  opacity: 1;
+}
+
+/* Erişilebilir odak halkası — outline:none yerine görünür halka (brief §3.3) */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--bg),
+    0 0 0 4px var(--chrome-2);
+  border-radius: var(--radius-sm);
+}
+
+/* İnce ayraç çizgisi — container-lines hissi */
+.hairline {
+  border-block-start: 1px solid var(--border-soft);
+}
+
+/* Kaydırma çubuğu */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--chrome-1);
+}
+
+/* Yatay kayan şeritlerde çubuğu gizle */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Kurumsal sayfa hero'ları: tek kadraj masaüstü ve mobilde anlamını korur. */
+.editorial-hero-scrim {
+  background:
+    linear-gradient(90deg, rgb(5 5 6 / 0.94) 0%, rgb(5 5 6 / 0.72) 38%, rgb(5 5 6 / 0.2) 78%),
+    linear-gradient(180deg, rgb(5 5 6 / 0.08) 44%, rgb(5 5 6 / 0.78) 100%);
+}
+
+:root[dir="rtl"] .editorial-hero-scrim {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 767px) {
+  .editorial-hero {
+    min-height: min(68svh, 38rem);
+  }
+
+  .editorial-hero-image {
+    object-position: 50% 50%;
+  }
+
+  .editorial-hero-scrim {
+    background:
+      linear-gradient(90deg, rgb(5 5 6 / 0.7) 0%, rgb(5 5 6 / 0.3) 72%, rgb(5 5 6 / 0.12) 100%),
+      linear-gradient(180deg, rgb(5 5 6 / 0.08) 24%, rgb(5 5 6 / 0.9) 100%);
+  }
+}
+
+/* Scroll'da beliren bloklar (§13.4 — 40ms stagger) */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise-in 500ms var(--ease-out-quint) both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 22%;
+}
+
+/* ------------------------------------------------------------------ homepage
+   5 üretim aşaması × yaklaşık 500px. Sticky yüzey, videoyu kaydırmaya bağlar. */
+.cinema-hero-shell {
+  height: calc(100svh + 1750px);
+}
+
+.cinema-hero-sticky {
+  position: sticky;
+  top: 4rem;
+  height: calc(100svh - 4rem);
+  min-height: 34rem;
+}
+
+.cinema-hero-scrim {
+  background: linear-gradient(
+    90deg,
+    rgb(5 5 6 / 0.97) 0%,
+    rgb(5 5 6 / 0.88) 31%,
+    rgb(5 5 6 / 0.52) 56%,
+    rgb(5 5 6 / 0.14) 82%,
+    transparent 100%
+  );
+}
+
+.cinema-hero-vignette {
+  background:
+    linear-gradient(180deg, rgb(5 5 6 / 0.18), transparent 22%, transparent 72%, rgb(5 5 6 / 0.58)),
+    radial-gradient(ellipse at center, transparent 46%, rgb(5 5 6 / 0.3) 100%);
+}
+
+:root[dir="rtl"] .cinema-hero-scrim {
+  transform: scaleX(-1);
+}
+
+.cinema-video-fallback {
+  display: none;
+}
+
+.hero-stage-copy {
+  animation: hero-copy-in 420ms var(--ease-out-quint) both;
+}
+
+.hero-final-copy {
+  animation: hero-final-in 680ms var(--ease-out-quint) both;
+}
+
+.hero-final-title {
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+}
+
+/* Çeviriler aynı karakter ölçülerine sahip değil. Başlık her dilde iki temiz
+   satır kalır; Türkçe/Almanca genişler, Arapça daha ferah satır yüksekliği alır. */
+:root[lang="tr"] .hero-final-title,
+:root[lang="de"] .hero-final-title {
+  max-width: 15ch;
+  font-size: clamp(2.15rem, 6.1vw, 5.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+:root[lang="ar"] .hero-final-title {
+  max-width: 13ch;
+  font-size: clamp(2.15rem, 5.8vw, 4.8rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+@media (max-width: 480px) {
+  :root[lang="tr"] .hero-final-title,
+  :root[lang="de"] .hero-final-title,
+  :root[lang="ar"] .hero-final-title {
+    font-size: clamp(1.95rem, 9.2vw, 2.65rem);
+  }
+}
+
+@keyframes hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-final-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.video-reel-progress {
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: video-reel-progress var(--video-duration, 8s) linear infinite;
+}
+
+:root[dir="rtl"] .video-reel-progress {
+  transform-origin: right;
+}
+
+@keyframes video-reel-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (min-width: 768px) {
+  .cinema-hero-shell {
+    height: calc(100svh + 2500px);
+  }
+
+  .cinema-hero-sticky {
+    top: 4.5rem;
+    height: calc(100svh - 4.5rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .cinema-hero-video {
+    object-position: center center;
+  }
+
+  .cinema-hero-scrim {
+    background: linear-gradient(
+      90deg,
+      rgb(5 5 6 / 0.94) 0%,
+      rgb(5 5 6 / 0.7) 58%,
+      rgb(5 5 6 / 0.24) 100%
+    );
+  }
+}
+
+/* Motion: sadece transform ve opacity, prefers-reduced-motion desteklenir */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .rise {
+    animation: none;
+  }
+  /* Işık geçişi durur; gradyan sabit kalır, metin okunur olmayı sürdürür. */
+  .chrome-text {
+    animation: none;
+    background-position: 50% 0;
+  }
+  .cinema-hero-shell {
+    height: auto;
+  }
+  .cinema-hero-sticky {
+    position: relative;
+    top: auto;
+    height: calc(100svh - 4rem);
+  }
+  .cinema-hero-video {
+    display: none;
+  }
+  .cinema-video-fallback {
+    display: block;
+  }
+  .video-reel-progress {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+/* Tema geçişi sırasında geçici olarak tüm geçişleri kapat (flash önler) */
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
 }

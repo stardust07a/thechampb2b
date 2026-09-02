@@ -1,0 +1,88 @@
+{
+  "totalProducts": 819,
+  "published": 818,
+  "draft": 1,
+  "totalVariants": 2168,
+  "totalImages": 12504,
+  "draftedProducts": [
+    {
+      "code": "TC-TSH-0638",
+      "reason": "bebek bedeni (12-13 Ay) iceriyor"
+    }
+  ],
+  "unmappedColors": {
+    "BEYA-Puantiyeli": 1
+  },
+  "unmappedDetailSegments": {
+    "Hediye": 3,
+    "Kalın Kumaşlı": 2,
+    "İç Göstermeyen": 2,
+    "Kalın Kumaş": 2,
+    "İçi Göstermez": 2,
+    "Sevgilergünü": 2,
+    "Premium Vintage Özel Kumaş": 2,
+    "Sırt Dekolteli": 1,
+    "Kolsuz": 1,
+    "Vücuda Oturan Şık Tasarım": 1,
+    "Esnek Yapı": 1,
+    "Toparlayıcı Kalıp": 1,
+    "Günlük & Şık Stil": 1,
+    "Poliamid": 1,
+    "Bağlama Detaylı": 1,
+    "Volanlı Tasarım": 1,
+    "Likra Kumaş": 1,
+    "Bodycon Parti & Gece Modeli": 1,
+    "Günlük ve Özel Gün Kombinlerine Uygun": 1,
+    "Çıtçıt Kapamalı": 1,
+    "Modern Slim Fit": 1,
+    "Günlük Şıklık": 1,
+    "Pembe": 1,
+    "Çizgili": 1,
+    "The End Street Style": 1,
+    "Feminen ve Modern Görünüm": 1,
+    "Dantel Detaylı": 1,
+    "Metal Aksesuar Detaylı": 1,
+    "Mini Boy": 1,
+    "Fermuar Detaylı": 1,
+    "Şort İç Yapılı": 1,
+    "%100 Viskoz": 1,
+    "Günlük Şık": 1,
+    "Pamuklu": 1,
+    "Eğlenceli ve Rahat": 1,
+    "Günlük Casual Model": 1,
+    "Paça-Bel Lastikli": 1,
+    "3İplik Şardonlu Polar": 1,
+    "Kangru Cep": 1,
+    "The Champ Armalı": 1,
+    "Şehir ve Kolej Stili": 1,
+    "Şehir ve Casual S": 1,
+    "Yazılık": 1,
+    "Sevgililer Günü": 1,
+    "Les Vacances Soleil Tasarım": 1,
+    "Le Soleil Deniz Kabuk ve Tropikal Arkası Baskı": 1,
+    "İskelet Desenli": 1,
+    "Rock Tarzı": 1,
+    "Streetwear": 1,
+    "Şapkalı Çizgi Karakter Desenli Rahat Model": 1,
+    "Dünya Haritası Grafik Desenli Spor Stil": 1,
+    "Très Chic Yazılı Pamuklu": 1,
+    "Lastikli": 1,
+    "Şerit Detaylı": 1,
+    "Yarım Fermuar": 1,
+    "Boru paça": 1,
+    "Polar Astarlı": 1,
+    "Pamuklu Jogger & Sweatshirt": 1,
+    "Lastikli Paç": 1,
+    "Uzun Boy": 1
+  },
+  "sizeWarnings": [
+    {
+      "code": "TC-TRS-0818",
+      "warnings": [
+        "sayisal beden standart kabul edildi: 32"
+      ]
+    }
+  ],
+  "duplicateNamesResolved": 210,
+  "longestNameEn": 40
+}
