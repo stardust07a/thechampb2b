@@ -1,0 +1,19 @@
+# Ürün medyası Vercel Blob üzerinden servis edilir; yalnız homepage hero
+# varlıkları deployment paketinde kalır.
+public/media/card/
+public/media/full/
+public/media/generated/
+public/media/pdf/
+public/media/thumb/
+public/media/uploads/
+
+# Yerel geliştirme ve agent dosyaları
+.env
+.env.*
+.devdb/
+.vercel/
+.next/
+.claude/
+.agents/
+skills-lock.json
+data/media-push-log.json

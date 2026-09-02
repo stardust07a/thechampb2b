@@ -127,11 +127,13 @@ async function main() {
     });
   }
 
-  // Yayında kalacaklar — sıra numaraları tek tek yazılır
-  const CHUNK = 200;
+  // Yayında kalacaklar — sıra numaraları tek tek yazılır. Uzak/serverless
+  // veritabanlarında büyük bir transaction varsayılan süreyi aşabildiği için
+  // küçük ve tekrar çalıştırılabilir gruplar kullanılır.
+  const CHUNK = 25;
   for (let i = 0; i < toPublish.length; i += CHUNK) {
     const slice = toPublish.slice(i, i + CHUNK);
-    await prisma.$transaction(
+    await Promise.all(
       slice.map((p) =>
         prisma.product.update({
           where: { id: p.id },
@@ -139,7 +141,7 @@ async function main() {
         }),
       ),
     );
-    if ((i + CHUNK) % 400 === 0) console.log(`  ${Math.min(i + CHUNK, toPublish.length)}/${toPublish.length}`);
+    if ((i + CHUNK) % 100 === 0) console.log(`  ${Math.min(i + CHUNK, toPublish.length)}/${toPublish.length}`);
   }
 
   // Görseli olmayanlar yayında kalmasın (brief §7)

@@ -53,8 +53,19 @@ next-env.d.ts
 /public/media/hero/*
 !/public/media/hero/home-journey.mp4
 !/public/media/hero/home-journey.webm
+!/public/media/hero/home-journey-mobile.mp4
 !/public/media/hero/home-journey-start.jpg
 !/public/media/hero/home-journey-final.jpg
 
 # yerel geliştirme veritabanı
 /.devdb
+
+/.vercel
+/.env.production.vercel
+
+# Vercel Marketplace'in yerel agent yardımcıları (uygulama runtime'ına dahil değil)
+/.agents/
+/skills-lock.json
+
+# Blob aktarımının yerel çalışma raporu
+/data/media-push-log.json
